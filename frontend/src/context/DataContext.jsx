@@ -11,7 +11,6 @@ export const DataProvider = ({ children }) => {
     fetchData(filters).then((fetchedData) => setData(fetchedData));    
   }, [filters]);
 
-  console.log("data ", data)
   const updateFilters = (newFilters) => {
     setFilters((prevFilters) => ({ ...prevFilters, ...newFilters }));
   };
