@@ -1,5 +1,5 @@
 import React from 'react'
-import { DataProvider } from './context/DataContext';
+import { DataProvider } from '@context/DataContext';
 import Home from './pages/Home'
 
 
