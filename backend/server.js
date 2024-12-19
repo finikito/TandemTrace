@@ -1,13 +1,15 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
 const db = new sqlite3.Database('./database.db');
 
 app.use(bodyParser.json());
 
-// Get all data
+app.use(cors())
+
 app.get('/api/data', (req, res) => {
   db.all('SELECT * FROM logs LIMIT 10', [], (err, rows) => {
     if (err) {
